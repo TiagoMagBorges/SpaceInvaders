@@ -2,7 +2,6 @@ package Entities.Animation;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -23,7 +22,7 @@ public class OneImageLoadAnimationStrategy implements LoadAnimationStrategy{
         try{
             sprite.add(ImageIO.read(Objects.requireNonNull(getClass().getResource("/Images/" + name + ".png"))));
         }catch(Exception e){
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return sprite;
     }

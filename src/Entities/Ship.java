@@ -2,8 +2,6 @@ package Entities;
 
 import Entities.Animation.Animation;
 import Entities.Animation.LoadAnimationStrategyFactory;
-import Level.Level;
-
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
@@ -62,10 +60,6 @@ public class Ship extends Entity implements Subject{
             shootTime = 0;
             canShoot = false;
         }
-    }
-
-    public boolean canShoot(){
-        return this.canShoot;
     }
 
     public Rectangle2D.Float getHitbox(){

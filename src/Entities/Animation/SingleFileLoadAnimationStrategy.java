@@ -21,7 +21,7 @@ public class SingleFileLoadAnimationStrategy implements LoadAnimationStrategy{
     @Override
     public ArrayList<BufferedImage> loadAnimation(int frames, String name) {
         ArrayList<BufferedImage> sprite = new ArrayList<>();
-        BufferedImage img = null;
+        BufferedImage img;
         try {
             img = ImageIO.read(Objects.requireNonNull(getClass().getResource("/Images/" + name + ".png")));
         } catch (IOException e) {

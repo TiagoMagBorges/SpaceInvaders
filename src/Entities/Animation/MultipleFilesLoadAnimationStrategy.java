@@ -2,7 +2,6 @@ package Entities.Animation;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -24,7 +23,7 @@ public class MultipleFilesLoadAnimationStrategy implements LoadAnimationStrategy
             try{
                 sprite.add(i, ImageIO.read(Objects.requireNonNull(getClass().getResource("/Images/" + name + i + ".png"))));
             }catch(Exception e){
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
         return sprite;

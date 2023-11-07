@@ -1,7 +1,7 @@
 package Entities;
 
 public interface Subject {
-    public void addObservers(Observer obs);
-    public void removeObservers(Observer obs);
-    public void notifyObservers();
+    void addObservers(Observer obs);
+    void removeObservers(Observer obs);
+    void notifyObservers();
 }
