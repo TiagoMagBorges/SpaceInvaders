@@ -7,7 +7,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Objects;
 import java.util.Random;
 
@@ -70,14 +69,16 @@ public class Level implements Observer{
 
             for(Enemy e : enemies){
                 e.update();
+                if(e.isRemove())
+                    toDeleteEnemies.add(e);
                 if(e.colideWith(ship) || e.colideWithScreenBorderVerticaly())
                     lost = true;
                 if(e.colideWithScreenBorderHorizontaly())
                     changeEnemiesDirection = true;
                 for(Bullet b : bullets){
                     if(e.colideWith(b)){
-                        toDeleteEnemies.add(e);
                         toDeleteBullets.add(b);
+                        e.exploded();
                     }
                 }
             }

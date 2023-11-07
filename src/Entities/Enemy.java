@@ -13,7 +13,6 @@ public class Enemy extends Entity{
     public Enemy(int x, int y) {
         super(x, y, 32, 32, 0.5F);
         exploded = false;
-        remove = false;
         removalTimer = 0;
         right = true;
     }
@@ -67,10 +66,6 @@ public class Enemy extends Entity{
         speed += 0.13F;
     }
 
-    public void startRemovalTimer(){
-        exploded = true;
-    }
-
     public void debuff(){
         speed -= 0.15F;
         hitbox.y -= 45;
@@ -78,5 +73,9 @@ public class Enemy extends Entity{
 
     public boolean isRemove(){
         return this.remove;
+    }
+
+    public void exploded() {
+        exploded = true;
     }
 }

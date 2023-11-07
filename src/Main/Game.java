@@ -92,13 +92,13 @@ public class Game extends JPanel implements KeyListener, Runnable {
         g.setColor(Color.WHITE);
         g.setFont(new Font("Arial", Font.BOLD, 20));
         if(getCurrentLevel().isLost()){
-            String message = String.format("Restarting in %d...", (int)(countdown / 100));
+            String message = String.format("Restarting in %d...", (countdown / 100));
             int x = (960 - g.getFontMetrics().stringWidth(message)) / 2;
             int y = (540 / 2) + 15;
             g.drawString(message, x, y);
         }
         if(getCurrentLevel().isWon()){
-            String message = String.format("Game closing in %d...", (int)(countdown / 100));
+            String message = String.format("Game closing in %d...", (countdown / 100));
             int x = (960 - g.getFontMetrics().stringWidth(message)) / 2;
             int y = (540 / 2) + 15;
             g.drawString(message, x, y);
